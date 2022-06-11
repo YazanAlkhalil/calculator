@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded",() => {
                     chooseOperation(button.innerHTML);
             }
         });
+        //sss
     
     arr[0].onclick = () => {
         currnum="";
