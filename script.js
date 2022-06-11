@@ -83,58 +83,6 @@ document.addEventListener("DOMContentLoaded",() => {
        currnum= currnum.slice(0,-1);
         updatedisplay(currnum,prevnum);
     }
-    // arr[2].onclick =()=>{
-    //     chooseOperation("/");
-    // }
-    // arr[3].onclick =()=>{
-    //     chooseOperation("*");
-    // }
-    // arr[4].onclick =() => {
-    //     currnum=currnum.concat("7")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[5].onclick =()=>{
-    //     currnum=currnum.concat("8")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[6].onclick =()=>{
-    //     currnum=currnum.concat("9")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[7].onclick =()=>{
-    //     if(currnum==="" && currnum!=="-"){
-    //         currnum=currnum.concat("-");
-    //         updatedisplay(currnum,prevnum);
-    //     }
-    //     else
-    //         chooseOperation("-");
-    // }
-    // arr[8].onclick =()=>{
-    //     currnum=currnum.concat("4")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[9].onclick =()=>{
-    //     currnum=currnum.concat("5")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[10].onclick =()=>{
-    //     currnum=currnum.concat("6")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[11].onclick =()=>{
-    // chooseOperation("+");}
-    // arr[12].onclick =()=>{
-    //     currnum=currnum.concat("1")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[13].onclick =()=>{
-    //     currnum=currnum.concat("2")
-    //     updatedisplay(currnum,prevnum);
-    // }
-    // arr[14].onclick =()=>{
-    //     currnum=currnum.concat("3")
-    //     updatedisplay(currnum,prevnum);
-    // }
     arr[15].onclick =()=>{
         if(prevnum==="" || currnum==="")
             return;
@@ -143,10 +91,7 @@ document.addEventListener("DOMContentLoaded",() => {
         operation=undefined;
         updatedisplay(currnum,prevnum)
     }
-    // arr[16].onclick =()=>{
-    //     currnum=currnum.concat("0")
-    //     updatedisplay(currnum,prevnum);
-    // }
+
     arr[17].onclick =()=>{
         if (currnum.includes('.')) return;
         currnum=currnum.concat(".")
