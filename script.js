@@ -6,12 +6,19 @@ document.addEventListener("DOMContentLoaded",() => {
     function updatedisplay(curr,prev){
         document.querySelector(".curr").innerHTML=curr;
         document.querySelector(".prev").innerHTML=prev;
+        if(curr==="Math error" || prevnum==="Math error"){
+            currnum='';
+            prevnum='';
+        }
     }
     function calculate(curr,prev){
+        if(currnum==="Math error" || prevnum==="Math error") return;
         let result;
         const previous = parseFloat(prev);
         const current = parseFloat(curr);
         if (isNaN(prev) || isNaN(current)) return;
+        if(current==0 && operation=="÷") return "Math error"
+    
         switch (operation) {
             case '+':
               result = previous + current;
@@ -34,7 +41,8 @@ document.addEventListener("DOMContentLoaded",() => {
           
     }
     function chooseOperation(oper){
-           if (currnum === '' || currnum==="-") {
+            if(currnum==="Math error" || prevnum==="Math error") return;
+            else if (currnum === '' || currnum==="-") {
                if(prevnum!==""){
                operation=oper;
                return;}
@@ -58,7 +66,7 @@ document.addEventListener("DOMContentLoaded",() => {
         }
         document.querySelectorAll(".number-button").forEach(button =>{
             button.onclick=() =>{
-            currnum=currnum.concat(button.innerHTML)
+            currnum=currnum.concat(button.innerHTML).replace("Math error","");
             updatedisplay(currnum,prevnum);}
         });
         document.querySelectorAll(".operation-button").forEach(button =>{
@@ -71,7 +79,6 @@ document.addEventListener("DOMContentLoaded",() => {
                     chooseOperation(button.innerHTML);
             }
         });
-        //sss
     
     arr[0].onclick = () => {
         currnum="";
@@ -81,10 +88,12 @@ document.addEventListener("DOMContentLoaded",() => {
         updatedisplay(currnum,prevnum);
     }
     arr[1].onclick = ()=>{
+        if(currnum==="Math error" || prevnum==="Math error") arr[0].onclick();
        currnum= currnum.slice(0,-1);
         updatedisplay(currnum,prevnum);
     }
     arr[15].onclick =()=>{
+        if(currnum==="Math error" || prevnum==="Math error") return;
         if(prevnum==="" || currnum==="")
             return;
         currnum=calculate(currnum,prevnum);
@@ -94,7 +103,7 @@ document.addEventListener("DOMContentLoaded",() => {
     }
 
     arr[17].onclick =()=>{
-        if (currnum.includes('.')) return;
+        if(currnum==="Math error" || prevnum==="Math error" || currnum.includes('.')) return;
         currnum=currnum.concat(".")
         updatedisplay(currnum,prevnum);
     }   
