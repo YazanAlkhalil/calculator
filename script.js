@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded",() => {
         }
     }
     function calculate(curr,prev){
-        if(currnum==="Math error" || prevnum==="Math error") return;
         let result;
         const previous = parseFloat(prev);
         const current = parseFloat(curr);
@@ -41,8 +40,7 @@ document.addEventListener("DOMContentLoaded",() => {
           
     }
     function chooseOperation(oper){
-            if(currnum==="Math error" || prevnum==="Math error") return;
-            else if (currnum === '' || currnum==="-") {
+             if (currnum === '' || currnum==="-") {
                if(prevnum!==""){
                operation=oper;
                return;}
@@ -88,12 +86,10 @@ document.addEventListener("DOMContentLoaded",() => {
         updatedisplay(currnum,prevnum);
     }
     arr[1].onclick = ()=>{
-        if(currnum==="Math error" || prevnum==="Math error") arr[0].onclick();
        currnum= currnum.slice(0,-1);
         updatedisplay(currnum,prevnum);
     }
     arr[15].onclick =()=>{
-        if(currnum==="Math error" || prevnum==="Math error") return;
         if(prevnum==="" || currnum==="")
             return;
         currnum=calculate(currnum,prevnum);
@@ -103,7 +99,7 @@ document.addEventListener("DOMContentLoaded",() => {
     }
 
     arr[17].onclick =()=>{
-        if(currnum==="Math error" || prevnum==="Math error" || currnum.includes('.')) return;
+        
         currnum=currnum.concat(".")
         updatedisplay(currnum,prevnum);
     }   
