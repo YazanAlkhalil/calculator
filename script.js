@@ -99,8 +99,9 @@ document.addEventListener("DOMContentLoaded",() => {
     }
 
     arr[17].onclick =()=>{
-        
-        currnum=currnum.concat(".")
+        if(currnum.includes(".")) return;
+        else if(currnum==="") currnum=currnum.concat("0.")
+        else currnum=currnum.concat(".")
         updatedisplay(currnum,prevnum);
     }   
     
